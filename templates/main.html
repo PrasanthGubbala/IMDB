@@ -1,0 +1,21 @@
+{% extends 'common.html' %}
+{% block common %}
+    <table align="center">
+            <tr>
+                <th>
+                    <img src="{{ data.image.url }}" width="800" height="400">
+                </th>
+            </tr>
+            <tr>
+                <th style="text-align: center;color: blue">{{ data.titleType }} : {{ data.title|capfirst }}</th>
+            </tr>
+            <tr>
+                <td style="text-align: center">status : {{ data.status }}</td>
+            </tr>
+        {% if messages %}
+            {% for message in messages %}
+                <tr><th style="text-align: center;color: red">{{ message }}</th></tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+{% endblock %}
